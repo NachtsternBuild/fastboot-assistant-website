@@ -2,21 +2,22 @@
 Website for the Fastboot-Assistant using [Jekyll](https://jekyllrb.com/).
 
 
-### How to build and run web site locally
+### How to build and run website locally
 #### How to install Ruby and Jekyll
 > [!WARNING]
-> **Snap setup is blocked by [snap.ruby#14](https://github.com/ruby/snap.ruby/issues/14)**
+> **Easier Snap setup is blocked by [snap.ruby#14](https://github.com/ruby/snap.ruby/issues/14)**
 > **Please use native packages for now.**
 
 <!--
 ```bash
 $ sudo snap install ruby --classic
-
 $ bundle env
-
 $ bundle install
+$ bundle exec jekyll serve --livereload
 ```
-For more information check https://jekyllrb.com/docs/installation/
+Browse to http://127.0.0.1:4000/
+Jekyll will automatically refresh the page with each change you make to the source files.
+For more information check https://jekyllrb.com/docs/
 -->
 
 1. Add `export GEM_HOME=${HOME}/.gem` to _~/.profile_ or _~/.bashrc_
@@ -38,15 +39,15 @@ For more information check https://jekyllrb.com/docs/installation/
   ## Bundler settings
   path
     Set for your local app (/path/to/fastboot-assistant-website/.bundle/config): "vendor/bundle"
-    ## Gemfile
-      ### Gemfile
-      ruby
-      # frozen_string_literal: true
-      source "https://rubygems.org"
-      gem "jekyll", "~> 3.10.0"
-      ### Gemfile.lock
-      GEM
-        remote: https://rubygems.org/
+  
+  ## Gemfile
+  ### Gemfile
+    ruby
+  source "https://rubygems.org"
+  
+  ### Gemfile.lock
+  GEM
+    remote: https://rubygems.org/
   ...
   ```
 8. Execute `bundle install` to install dependencies listed in _Gemfile_. Installation should successfully complete, i.e.
@@ -55,5 +56,8 @@ For more information check https://jekyllrb.com/docs/installation/
   Bundled gems are installed into `./vendor/bundle`
   ```
 9. Execute `bundle exec jekyll build` to build the website for the first time.
+10. Now you can serve the website locally as per instruction below.
 
 #### How to run Jekyll
+Execute `bundle exec jekyll serve --livereload` to build and serve the website at http://127.0.0.1:4000/
+Jekyll will automatically refresh the page with each change you make to the source files.
