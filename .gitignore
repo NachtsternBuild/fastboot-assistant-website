@@ -1,0 +1,7 @@
+# Directories to ignore
+/_site/
+/.jekyll-metadata/
+/.sass-cache/
+/vendor/
+
+# Files to ignore
